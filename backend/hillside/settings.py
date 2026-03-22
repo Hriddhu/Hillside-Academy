@@ -131,6 +131,7 @@ REST_FRAMEWORK = {
 }
 # ── Whitenoise (serves static files efficiently) ──────────────
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+WHITENOISE_AUTOREFRESH = True
 
 # ── Django Axes (blocks brute force login attempts) ───────────
 AXES_FAILURE_LIMIT         = 10      # lock after 5 failed attempts
