@@ -164,3 +164,14 @@ REST_FRAMEWORK = {
 # ── Security headers (safe for dev, essential for production) ──
 X_FRAME_OPTIONS          = 'DENY'
 SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Cloudinary
+INSTALLED_APPS += ['cloudinary_storage', 'cloudinary']
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
